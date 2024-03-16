@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Employer;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Employer;
-
 class ProfileController extends Controller
 {
     public function index()
@@ -35,9 +34,34 @@ class ProfileController extends Controller
             $employer->logo = $request->file('logo')->store('public/logoes');
         }
         $employer->update(); 
-        session()->flash('success','My profile update successfull');
+        session()->flash('success','Cập nhật thông tin thành công');
 
 
-        return to_route('employer.index');
+        return redirect()->back();
+    }
+
+    public function showChangePasswordForm()
+    {
+        $employer = Auth::guard('employer')->user();
+        return view('employer.change-password',compact('employer'));
+    }
+
+    public function changePassword(Request $request, Employer $employer ){
+        $validated = $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|min:8',
+            'password_confirmation' => 'required||same:new_password',
+        ]);
+        if (!Hash::check($request->old_password, $employer->password)) {
+            session()->flash('error','Mật khẩu cũ không chính xác');
+        } 
+        else {
+            $employer->password = bcrypt($request->input('new_password')); 
+            $employer->update(); 
+            session()->flash('success','Thay đổi mật khẩu thành công');
+        }
+        
+        return redirect()->back();
+
     }
 }

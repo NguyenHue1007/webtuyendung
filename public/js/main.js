@@ -243,7 +243,7 @@
     }
 
     //about-pro-active
-    $('.details_active').owlCarousel({
+    $('.applys_active').owlCarousel({
       loop: true,
       margin: 0,
       items: 1,
@@ -402,6 +402,7 @@
       // Gọi hàm niceSelect('update') để cập nhật nice-select
       $(wards).niceSelect('update');
     };
+
   }
 
 })(jQuery);
@@ -411,51 +412,42 @@ var loadFile = function (event) {
   image.src = URL.createObjectURL(event.target.files[0]);
 };
 
-var quillInit = function() {
+/*Tắt thông báo sau 5s*/
 
-  var toolbarOptions = [
-    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-    ['blockquote', 'code-block'],
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    hideNotification();
+  }, 4000);
+});
 
-    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-    [{ 'direction': 'rtl' }],                         // text direction
+function hideNotification() {
+  var notificationBoxes = document.querySelectorAll(".notificationBox");
 
-    // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-    // [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-    // [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-    // [{ 'font': [] }],
-    // [{ 'align': [] }],
-
-    // ['clean']                                         // remove formatting button
-  ];
-
-  if ( $('.editor').length > 0 ) {
-    var quill = new Quill('#editor-1', {
-      modules: {
-        toolbar: toolbarOptions,
-      },
-      placeholder: 'Compose an epic...',
-      theme: 'snow'  // or 'bubble'
-    });
-    var quill = new Quill('#editor-2', {
-      modules: {
-        toolbar: toolbarOptions,
-      },
-      placeholder: 'Compose an epic...',
-      theme: 'snow'  // or 'bubble'
-    });
-    var quill = new Quill('#editor-3', {
-      modules: {
-        toolbar: toolbarOptions,
-      },
-      placeholder: 'Compose an epic...',
-      theme: 'snow'  // or 'bubble'
-    });
-  }
-
+  notificationBoxes.forEach(function (notificationBox) {
+    notificationBox.style.display = "none";
+  });
 }
-quillInit();
+
+window.addEventListener('DOMContentLoaded', function () {
+  var menuLinks = document.querySelectorAll('.custom-menu a');
+
+  menuLinks.forEach(function (link) {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Kiểm tra xem có parameter 'showModal' trong URL không
+  var urlParams = new URLSearchParams(window.location.search);
+  var showModal = urlParams.get('showModal');
+
+  // Nếu có, mở modal
+  if (showModal === 'true') {
+    // Lấy modal theo id và mở nó
+    var modal = document.getElementById('modal-apply');
+    var modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+  }
+});

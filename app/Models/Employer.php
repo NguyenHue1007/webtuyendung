@@ -49,4 +49,14 @@ class Employer extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    public function getApplicantsForJobs()
+    {
+        return $this->hasManyThrough(Application::class, Job::class);
+    }
 }

@@ -14,10 +14,7 @@ class CategoryController extends BaseController
 {
     public function index()
 	{
-		$categories = Category::all();
-		// ::orderBy('id')
-		// 				->paginate(5)
-		// 				->withQueryString();
+		$categories = Category::paginate(7);
 
 		return view('admin.category.index', compact('categories'));
 

@@ -191,6 +191,9 @@ h3 {
   background: #020c26 !important;
 }
 
+.primary-bg{
+  background-color: #60cb60;
+}
 /* line 123, ../../Arafath/CL/December/235. Job board/HTML/scss/theme-default.scss */
 .white-bg {
   background: #ffffff;
@@ -457,7 +460,7 @@ h3 {
   border-radius: 5px;
   text-align: center;
   color: #fff !important;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
@@ -467,7 +470,7 @@ h3 {
 
 /* line 43, ../../Arafath/CL/December/235. Job board/HTML/scss/_btn.scss */
 .boxed-btn3:hover {
-  color: #fff !important;
+  color:  #00D363!important;
   border: 1px solid #00D363;
   background: transparent;
 }
@@ -3374,7 +3377,7 @@ h3 {
 
 /* line 4, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
 .job_listing_area.plus_padding {
-  padding-top: 100px;
+  padding-top: 160px; 
 }
 
 @media (max-width: 767px) {
@@ -3401,16 +3404,16 @@ h3 {
 
 /* line 18, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
 .job_listing_area .job_lists .single_jobs {
-  padding: 30px;
+  padding:20px 30px;
   margin-bottom: 12px;
-  border: 1px solid transparent;
+  border: 1px solid #B2F2D0;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -3498,7 +3501,7 @@ h3 {
 .job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent .links_locat .location p {
   margin-bottom: 0;
   font-size: 16px;
-  color: #AAB1B7;
+  color: #686f75;
 }
 
 /* line 73, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
@@ -3515,23 +3518,28 @@ h3 {
 }
 
 /* line 87, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
-.job_listing_area .job_lists .single_jobs .jobs_right .apply_now a.heart_mark {
+.job_listing_area .job_lists .single_jobs .jobs_right .apply_now button.heart_mark {
   width: 40px;
   height: 40px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   color: #00D363;
-  font-size: 14px;
-  line-height: 40px;
   text-align: center;
   display: inline-block;
   background: #EFFDF5;
   margin-right: 15px;
 }
 
+.job_listing_area .job_lists .single_jobs .jobs_right .apply_now a.bg-link{
+  background: #e5f7ed;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_right .apply_now a.bg-link:hover{
+  background: #c0eed4;
+}
 /* line 98, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
-.job_listing_area .job_lists .single_jobs .jobs_right .apply_now a.heart_mark:hover {
+.job_listing_area .job_lists .single_jobs .jobs_right .apply_now button.heart_mark:hover {
   background: #00D363;
   color: #fff;
 }
@@ -3566,7 +3574,7 @@ h3 {
 
 /* line 123, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
 .job_listing_area .job_lists .single_jobs:hover {
-  border-color: #B2F2D0;
+  border-color: #00D363;
 }
 
 /* line 130, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
@@ -3842,7 +3850,7 @@ h3 {
 .pagination_wrap ul li a {
   width: 38px;
   height: 38px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #ced5d1;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -3854,7 +3862,11 @@ h3 {
   font-size: 14px;
   margin: 0 4px;
 }
-
+.pagination_wrap ul li.active a{
+  background-color: #00D363 !important;
+  color: #fff;
+  border:transparent;
+}
 /* line 104, ../../Arafath/CL/December/235. Job board/HTML/scss/_candidates.scss */
 .pagination_wrap ul li a i {
   line-height: 38px;
@@ -4022,7 +4034,7 @@ h3 {
 /* line 1, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area {
   background: #F5F7FA;
-  padding-top: 100px;
+  padding-top: 130px;
   padding-bottom: 100px;
 }
 
@@ -4077,7 +4089,7 @@ h3 {
 
 /* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
-  font-size: 24px;
+  font-size: 23px;
   margin-bottom: 10px;
   font-weight: 400;
   -webkit-transition: 0.3s;
@@ -4141,22 +4153,20 @@ h3 {
 }
 
 /* line 73, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-.job_details_area .single_jobs .jobs_right .apply_now a.heart_mark {
+.job_details_area .single_jobs .jobs_right .apply_now .heart_mark {
   width: 40px;
   height: 40px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   color: #00D363;
-  font-size: 14px;
-  line-height: 40px;
   text-align: center;
   display: inline-block;
   background: #EFFDF5;
 }
 
 /* line 83, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-.job_details_area .single_jobs .jobs_right .apply_now a.heart_mark:hover {
+.job_details_area .single_jobs .jobs_right .apply_now .heart_mark:hover {
   background: #00D363;
   color: #fff;
 }
@@ -4209,14 +4219,14 @@ h3 {
   font-size: 20px;
   font-weight: 500;
   color: #001D38;
-  margin-bottom: 25px;
+  margin-bottom: 16px;
 }
 
 /* line 123, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area .descript_wrap .single_wrap p {
-  color: #7A838B;
+  color: #333;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 25px;
   font-weight: 400;
 }
 
@@ -4224,7 +4234,7 @@ h3 {
 .job_details_area .descript_wrap .single_wrap ul li {
   font-size: 16px;
   line-height: 32px;
-  color: #7A838B;
+  color: #333;
   font-weight: 400;
   position: relative;
   padding-left: 25px;
@@ -4237,7 +4247,7 @@ h3 {
   top: 0;
   width: 7px;
   height: 7px;
-  background: #7A838B;
+  background: #333;
   content: '';
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -4247,7 +4257,7 @@ h3 {
 
 /* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area .apply_job_form {
-  margin-top: 30px;
+  margin-top: 15px;
   padding: 40px;
 }
 
@@ -4382,7 +4392,7 @@ h3 {
 /* line 241, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area .job_sumary .summery_header {
   border-bottom: 1px solid #EAEAEA;
-  padding: 40px;
+  padding: 15px 25px;
 }
 
 @media (max-width: 767px) {
@@ -4395,14 +4405,14 @@ h3 {
 
 /* line 247, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area .job_sumary .summery_header h3 {
-  font-size: 24px;
+  font-size: 21px;
   color: #001D38;
   font-weight: 400;
 }
 
 /* line 253, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
 .job_details_area .job_sumary .job_content {
-  padding: 40px;
+  padding: 20px 30px;
 }
 
 @media (max-width: 767px) {
@@ -6668,7 +6678,7 @@ h6 {
 
 /* line 661, ../../Arafath/CL/December/235. Job board/HTML/scss/_blog.scss */
 .blog_right_sidebar .single_sidebar_widget {
-  background: #fbf9ff;
+  background: #f6f4fa;
   padding: 30px;
   margin-bottom: 30px;
 }
@@ -6796,7 +6806,7 @@ h6 {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 6px;
-  transition: all 0.3s linear;
+  transition: all 0.3s linear;  
 }
 
 /* line 808, ../../Arafath/CL/December/235. Job board/HTML/scss/_blog.scss */
@@ -7866,17 +7876,21 @@ h6 {
 }
 
 .submit-resume textarea {
-  height: 140px!important;
+  height: unset !important;
   padding: 20px;
 }
 
 /*Manage job*/
 .table-job-bx thead th {
-  background-color: #67ec67;
+  background-color: #60cb60;
 }
 
-.table-job-bx thead th, .table-job-bx tbody td {
+.table-job-bx thead th{
     padding: 15px 20px;
+}
+
+.table-job-bx tbody td {
+  padding: 20px 20px;
 }
 
 .table-job-bx th {
@@ -7884,7 +7898,7 @@ h6 {
 }
 
 .table-job-bx tbody tr:nth-child(2n+2) {
-  background-color: #b3f4b3cf;
+  background-color: #ecf7eccf;
 }
 
 .page-content{
@@ -7915,3 +7929,208 @@ h6 {
   top: 0;
   opacity: 0;
 }
+/*end*/
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
+}
+
+.check {
+  border-radius: 5px;
+  height: 70px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(129, 140, 140);
+  cursor: pointer;
+  color: #0ad406;
+  margin: 20px;
+  opacity: 90%;
+}
+
+.color {
+  animation: color 2s linear infinite;
+  font-size: 25px;
+}
+
+.danger {
+  border-radius: 5px;
+  height: 70px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(129, 140, 140);
+  cursor: pointer;
+  color: rgb(255, 10, 1);
+  margin: 20px;
+  opacity: 90%;
+}
+
+.shine {
+  animation: shine 2s linear infinite;
+  font-size: 25px;
+}
+
+@keyframes color {
+  50% {
+    color: #7CFC00;
+  }
+
+  100% {
+    color: #0ad406;
+  }
+}
+
+@keyframes shine {
+  0% {
+    color: #B22222;
+  }
+
+  50% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 40px red,
+      0 0 60px red,
+      0 0 80px red;
+  }
+}
+/*end*/
+.format-content{
+  white-space: pre-line;
+}
+
+.line-text{
+  line-height: 25px !important;
+}
+
+.location-width{
+  max-width: 334px;
+}
+
+.premium-job-general-information__content--row {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+.premium-job-general-information__content--row .general-information-logo {
+  border: 1px solid #00D363 !important;
+  background-color: #00D363;
+}
+.premium-job-general-information__content--row .general-information-logo {
+  align-items: center;
+  border-radius: 40px;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 4px;
+  width: 40px;
+}
+.premium-job-general-information__content--row .general-information-data {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.premium-job-general-information__content--row .general-information-data__label {
+  color: #4d5965;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .14px;
+  line-height: 22px;
+}
+
+.premium-job-general-information__content--row .general-information-data__value {
+  color: #212f3f;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: .175px;
+  line-height: 22px;
+}
+
+.general-information-logo i{
+  color: #fff;
+}
+
+
+.icon-color{
+  color: #00D363;
+}
+
+
+/*manage-job*/
+.job-links .view {
+  background-color: #4967e7;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 7px;
+  line-height: 14px;
+  font-size: 14px;
+}
+
+.job-links .edit {
+  background-color: #ffc107;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 7px;
+  line-height: 14px;
+  font-size: 14px;
+}
+
+.job-links .delete {
+  background-color: #e53232;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 7px;
+  line-height: 14px;
+  font-size: 14px;
+}
+.table-job-bx .job-name {
+  max-width: 380px;
+}
+.table-job-bx .job-name p{
+  font-weight: 600;
+  color: #333;
+  font-family: roboto, sans-serif;
+}
+
+.table-job-bx .job-name ul li{
+  font-size: 14px;
+}
+
+.table-job-bx .job-name ul li i{
+  font-size: 12px;
+}
+
+.job-bx-edit{
+box-shadow: unset;
+}
+
+.container-content{
+  padding: 0 120px;
+}
+
+.custom-ul-li ul li{
+  list-style-type: disc !important; /* Sử dụng !important để ghi đè */
+}
+
+.summary-container {
+  line-height: 1.5em; 
+  max-height: calc(1.5em * 3); 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+

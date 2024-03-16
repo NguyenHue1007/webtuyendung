@@ -35,4 +35,4 @@
 <!-- End of Page Wrapper -->
  
   @INCLUDE('layout_admin.js')
-  
+  @stack('scripts')

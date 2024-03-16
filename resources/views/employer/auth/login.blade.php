@@ -89,8 +89,13 @@
                             <div class="input-group bg-white">
                                 <span class="input-group-text bg-white input-icon" id="basic-addon1"><i
                                         class="fa fa-envelope"></i></span>
-                                <input type="email" class="form-control border border-start-0" id="exampleInputEmail1" name="email"
+                                <input type="email" class="form-control border border-start-0 @error('email') is-invalid @enderror" id="exampleInputEmail1" name="email"
                                     placeholder="Email">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -100,8 +105,13 @@
                             <div class="input-group bg-white">
                                 <span class="input-group-text bg-white input-icon" id="basic-addon1"><i
                                         class="fa fa-lock"></i></span>
-                                <input type="password" class="form-control border border-start-0"
+                                <input type="password" class="form-control border border-start-0 @error('password') is-invalid @enderror"
                                     id="formGroupExampleInput2" name ="password"placeholder="Mật khẩu">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                     </div>

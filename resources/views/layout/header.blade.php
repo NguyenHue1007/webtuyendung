@@ -7,8 +7,8 @@
                       <div class="row align-items-center">
                           <div class="col-xl-3 col-lg-2">
                               <div class="logo">
-                                  <a href="index.html">
-                                      <img src="{{url('img/logo.png')}}" alt="">
+                                  <a href="{{ route('home') }}">
+                                      <img src="{{ url('img/logo.png') }}" alt="">
                                   </a>
                               </div>
                           </div>
@@ -16,29 +16,18 @@
                               <div class="main-menu  d-none d-lg-block">
                                   <nav>
                                       <ul id="navigation">
-                                          <li><a href="index.html">home</a></li>
-                                          <li><a href="jobs.html">Browse Job</a></li>
-                                          <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                              <ul class="submenu">
-                                                  <li><a href="candidate.html">Candidates </a></li>
-                                                  <li><a href="job_details.html">job details </a></li>
-                                                  <li><a href="elements.html">elements</a></li>
-                                              </ul>
+                                          <li><a href="{{ route('home') }}">Trang chủ</a></li>
+                                          <li><a href="{{ route('jobs') }}">Việc làm</a></li>
+                                          <li><a href="{{ route('blog') }}">Tin tức</a>
                                           </li>
-                                          <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                              <ul class="submenu">
-                                                  <li><a href="blog.html">blog</a></li>
-                                                  <li><a href="single-blog.html">single-blog</a></li>
-                                              </ul>
-                                          </li>
-                                          <li><a href="contact.html">Contact</a></li>
+                                          <li><a href="contact.html">Liên hệ</a></li>
                                       </ul>
                                   </nav>
                               </div>
                           </div>
                           <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                               <div class="Appointment">
-                                  @if (auth()->check())
+                                @if (Auth::guard('web')->check())
                                       <div class="dropdown">
                                           <button class="btn btn-secondary dropdown-toggle" type="button"
                                               data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,9 +37,27 @@
                                               </span>
                                           </button>
                                           <ul class="dropdown-menu">
+                                              <a class="dropdown-item py-2" href="{{ route('user.profile') }}">
+                                                  <i class="fa-regular fa-user pe-2 icon-color"></i>
+                                                  <span>Trang cá nhân</span>
+                                              </a>
+                                              <a class="dropdown-item py-2" href="{{ route('user.favoritejob') }}">
+                                                  <i class="fa-solid fa-heart pe-2 icon-color"></i>
+                                                  <span>Việc làm đã lưu</span>
+                                              </a>
+                                              <a class="dropdown-item py-2" href="{{ route('user.job_apply') }}">
+                                                  <i class="fa fa-briefcase pe-2 icon-color"></i>
+                                                  <span>Việc làm đã ứng tuyển</span>
+                                              </a>
+                                              <a class="dropdown-item py-2"
+                                                  href="{{ route('user.show_change_password') }}">
+                                                  <i class="fa-solid fa-key pe-2 icon-color"></i>
+                                                  <span>Đổi mật khẩu</span>
+                                              </a>
                                               <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
                                                   data-target="#logoutModal"
                                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                  <i class="fa-solid fa-right-from-bracket pe-2 icon-color"></i>
                                                   {{ __('Logout') }}
                                               </a>
                                               <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -69,20 +76,33 @@
                                               </span>
                                           </button>
                                           <ul class="dropdown-menu">
-                                              <a class="dropdown-item" href="{{ route('employer.logout') }}" data-toggle="modal"
-                                                  data-target="#logoutModal"
+                                              <a class="dropdown-item py-2" href="{{ route('employer.index') }}">
+                                                  <i class="fa-regular fa-user pe-2 icon-color"></i>
+                                                  <span>Company Profile</span>
+                                              </a>
+                                              <a class="dropdown-item py-2" href="{{ route('employer.post_job') }}">
+                                                  <i class="fa-regular fa-file pe-2 icon-color"></i>
+                                                  <span>Post a job</span>
+                                              </a>
+                                              <a class="dropdown-item py-2" href="{{ route('employer.manage_job') }}">
+                                                  <i class="fa fa-briefcase pe-2 icon-color"></i>
+                                                  <span>Manage job</span>
+                                              </a>
+                                              <a class="dropdown-item py-2" href="{{ route('employer.logout') }}"
+                                                  data-toggle="modal" data-target="#logoutModal"
                                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                  <i class="fas fa-sign-out-alt pe-2 icon-color"></i>
                                                   {{ __('Logout') }}
                                               </a>
-                                              <form id="logout-form" action="{{ route('employer.logout') }}" method="POST"
-                                                  class="d-none">
+                                              <form id="logout-form" action="{{ route('employer.logout') }}"
+                                                  method="POST" class="d-none">
                                                   @csrf
-                                              </form>   
+                                              </form>
                                           </ul>
                                       </div>
                                   @else
                                       <div class="phone_num d-none d-xl-block">
-                                          <a class="boxed-btn3 font-weight-bold" href="{{route('login')}}">Log in</a>
+                                          <a class="boxed-btn3 font-weight-bold" href="{{ route('login') }}">Log in</a>
                                       </div>
                                       <div class="phone_num d-none d-xl-block">
                                           <a class="boxed-btn3 font-weight-bold" data-bs-toggle="modal"
@@ -113,7 +133,7 @@
               <div class="modal-header d-flex flex-column align-items-center justify-content-center">
                   <h3 class="modal-title" id="staticBackdropLabel">Chào bạn,</h3>
                   <p>Bạn hãy dành ra vài giây để xác nhận thông tin dưới đây nhé!
-                      <img src ="img/category/ring.png" width="40">
+                      <img src ="{{ url('img/category/ring.png') }}" width="40">
                   </p>
               </div>
               <div class="modal-body">
@@ -123,13 +143,13 @@
                   </div>
                   <div class="row d-flex justify-content-between">
                       <div class="col-6 text-center">
-                          <img src="img/job/bussiness.png" width="400">
+                          <img src="{{ url('img/job/bussiness.png') }}" width="400">
                           <a class="btn btn-success text-white rounded-pill px-3 py-1 fw-light"
                               href="{{ route('employer.register.index') }}">
                               Tôi là nhà tuyển dụng</a>
                       </div>
                       <div class="col-6 text-center">
-                          <img src="img/job/student.png" width="400">
+                          <img src="{{ url('img/job/student.png') }}" width="400">
                           <a class="btn btn-success text-white rounded-pill px-3 py-1 fw-light"
                               href="{{ route('register') }}">
                               Tôi là ứng viên tìm việc</a>
