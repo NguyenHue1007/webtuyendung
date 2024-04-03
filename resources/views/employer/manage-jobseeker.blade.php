@@ -29,8 +29,8 @@
                                             <th>Tên ứng viên</th>
                                             <th>Vị trí ứng tuyển</th>
                                             <th class="text-center">Thời gian nộp</th>
-                                            <th class="text-center">Hồ sơ</th>
                                             <th class="text-center">Trạng thái</th>
+                                            <th class="text-center">Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,18 +47,33 @@
                                                         <p class="text-dark mb-1">{{ $item->created_at->format('d/m/Y') }}
                                                         </p>
                                                     </td>
+
                                                     <td class="text-center">
-                                                        <a href="{{route('view_cv', $item->id)}}" class="bg-info-subtle rounded-pill px-2 py-1"><i
-                                                                class="fa-regular fa-eye"></i> Xem CV</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <select class="w-100" name="status[{{$item->id}}]">
-                                                            <option value="Chờ xử lý" {{ $item->status == 'Chờ xử lý' ? 'selected' : '' }}>Chờ xử lý</option>
-                                                            <option value="Đã xem"  {{ $item->status == 'Đã xem' ? 'selected' : '' }}>Đã xem</option>
-                                                            <option value="Phỏng vấn"  {{ $item->status == 'Phỏng vấn' ? 'selected' : '' }}>Phỏng vấn</option>
-                                                            <option value="Chấp nhận"  {{ $item->status == 'Chấp nhận' ? 'selected' : '' }}>Chấp nhận</option>
-                                                            <option value="Từ chối"  {{ $item->status == 'Từ chối' ? 'selected' : '' }}>Từ chối</option>
+                                                        <select class="w-100" name="status[{{ $item->id }}]">
+                                                            <option value="Chờ xử lý"
+                                                                {{ $item->status == 'Chờ xử lý' ? 'selected' : '' }}>Chờ xử
+                                                                lý</option>
+                                                            <option value="Đã xem"
+                                                                {{ $item->status == 'Đã xem' ? 'selected' : '' }}>Đã xem
+                                                            </option>
+                                                            <option value="Phỏng vấn"
+                                                                {{ $item->status == 'Phỏng vấn' ? 'selected' : '' }}>Phỏng
+                                                                vấn</option>
+                                                            <option value="Chấp nhận"
+                                                                {{ $item->status == 'Chấp nhận' ? 'selected' : '' }}>Chấp
+                                                                nhận</option>
+                                                            <option value="Từ chối"
+                                                                {{ $item->status == 'Từ chối' ? 'selected' : '' }}>Từ chối
+                                                            </option>
                                                         </select>
+                                                    </td>
+                                                    <td class="job-links text-center">
+                                                        <a href="{{ route('view_cv', $item->user->id) }}" class="view-job">
+                                                            <i class="fa-solid fa-eye view"></i>
+                                                        </a>
+                                                        <a href="{{route('chats_employer',$item->user->id)}}" class="edit-job">
+                                                            <i class="fa-solid fa-message edit"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endforeach

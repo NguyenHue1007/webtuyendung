@@ -1604,7 +1604,6 @@ pre code {
 .table-hover .table-success:hover > th {
   background-color: #aaebd3;
 }
-
 .table-info,
 .table-info > th,
 .table-info > td {
@@ -2357,20 +2356,20 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #337991 !important;
+  border-color: #337991 !important;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
+  background-color: #49a9ac !important;
+  border-color: #49a9ac !important;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
+  background-color: #49a9ac;
+  border-color: #49a9ac;
   box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
@@ -10322,6 +10321,7 @@ a:focus {
 .sidebar {
   width: 6.5rem;
   min-height: 100vh;
+  background-image: linear-gradient(15deg, #80d0c7 0%, #13547a 100%);
 }
 
 .sidebar .nav-item {

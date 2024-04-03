@@ -44,8 +44,8 @@ class FavoriteJobController extends Controller
     {
        
         $user = Auth::user();
-
-        $favoriteJobs = FavoriteJob::where('user_id', $user->id)->with('job')->get();
+        
+        $favoriteJobs = $user->favoriteJobs;
     
         return view('jobseeker.favoritejob',compact('favoriteJobs'));
     }

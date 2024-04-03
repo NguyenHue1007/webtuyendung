@@ -20,5 +20,15 @@ class JobseekerController extends BaseController
 
 	}
 
+	public function destroy(Request $request, User $user)
+	{
+
+		$user->delete();
+
+		session()->flash('success','Xóa người tìm việc thành công');
+
+		return redirect()->back();      
+	}
+
 
 }

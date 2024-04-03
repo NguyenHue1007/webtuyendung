@@ -7,13 +7,13 @@
                         <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="{{url('img/logo.png')}}" alt="">
+                                    <img src="{{ url('img/logo.png') }}" alt="">
                                 </a>
                             </div>
                             <p>
-                                finloan@support.com <br>
+                                jobboard@support.com <br>
                                 +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
+                                600/D, Lương Ngọc Quyến, TP Thái Nguyên
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -81,20 +81,6 @@
                             <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
                                 luckily.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
                     </div>
                 </div>
             </div>

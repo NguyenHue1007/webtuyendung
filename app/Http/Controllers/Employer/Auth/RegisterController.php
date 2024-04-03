@@ -71,10 +71,8 @@ class RegisterController extends Controller
         return Employer::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'gender' => $data['gender'],
             'phone' => $data['phone'],
             'company' => $data['company'],
-            'position' => $data['position'],
             'city' => $data['city'],
             'distric' => $data['district'],
             'commune' => $data['ward'],

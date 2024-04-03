@@ -20,5 +20,13 @@ class EmployerController extends BaseController
 
 	}
 
+	public function destroy(Request $request, Employer $employer)
+	{
 
+		$employer->delete();
+
+		session()->flash('success','Xóa nhà tuyển dụng thành công');
+
+		return redirect()->back();      
+	}
 }

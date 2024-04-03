@@ -10,6 +10,8 @@ use App\Models\Job;
 
 use App\Models\Article;
 
+use App\Models\Employer;
+
 use App\Models\Application;
 
 class HomeController extends Controller
@@ -33,7 +35,8 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $jobs = Job::all();
-        return view('welcome',compact('categories', 'jobs'));
+        $employers = Employer::all();
+        return view('welcome',compact('categories', 'jobs','employers'));
     }
 
     public function jobs(){
@@ -42,7 +45,8 @@ class HomeController extends Controller
     }
 
     public function jobDetail(Job $job){
-
+        $job->view += 1;
+        $job->save();
         return view('job_detail',compact('job'));
     }
 
@@ -94,6 +98,11 @@ class HomeController extends Controller
          $otherArticles = Article::where('id', '!=', $article->id)->get();
         return view('detail_blog',compact('article','otherArticles'));
     }
+
+    public function profileCompany(Employer $employer){
+        
+        return view('profile_company',compact('employer'));
+   }
 
 
 }

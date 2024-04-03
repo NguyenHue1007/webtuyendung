@@ -22,7 +22,7 @@
                                         <div class="upload-btn-wrapper">
                                             <button class="btn-logo"><i class="fa-solid fa-upload pe-2"></i>Chọn ảnh đại
                                                 diện</button>
-                                            <input type="file" name="avatar" />
+                                            <input type="file" name="avatar" id="file" onchange="loadFile(event)" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 mb-4">

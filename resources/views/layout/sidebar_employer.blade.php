@@ -10,15 +10,15 @@
                                         id="output" width="150" /> --}}
                                     @if ($employer->logo)
                                         <img class="rounded-circle border" src="{{ url(Storage::url($employer->logo)) }}"
-                                            width="150">
+                                            width="150"  id="output">
                                     @else
                                         <img class="rounded-circle"
                                             src="{{url('img/logo_default.png')}}"
-                                            id="output" width="150" />
+                                            width="150" id="output"/>
                                     @endif
                                 </div>
                                 <div class="candidate-title">
-                                    <h4 class="mt-3">{{ $employer->company }}</h4>
+                                    <h4 class="mt-3 px-2">{{ $employer->company }}</h4>
                                 </div>
                             </div>
                             <ul class="custom-menu">

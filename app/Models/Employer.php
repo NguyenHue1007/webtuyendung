@@ -55,8 +55,14 @@ class Employer extends Authenticatable
         return $this->hasMany(Job::class);
     }
 
-    public function getApplicantsForJobs()
+    public function sentMessages()
     {
-        return $this->hasManyThrough(Application::class, Job::class);
+        return $this->hasMany(Message::class, 'sender_id');
     }
+
+    public function receivedMessages()
+    {
+        return $this->morphMany(Message::class, 'receiver');
+    }
+
 }

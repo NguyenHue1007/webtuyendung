@@ -57,6 +57,9 @@
                         </div>
                     </div>
                     <div class="descript_wrap white-bg">
+                        <div class="d-flex mb-3">
+                            <span class="text-account fs-4">Chi tiết tin tuyển dụng</span>
+                        </div>
                         <div class="single_wrap p-3 bg-light rounded">
                             <h4>Mô tả công việc</h4>
                             <div>
@@ -101,6 +104,13 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
+                    <div class="share_wrap mt-0 text-center">
+                        <h4>{{$job->employer->company}}</h4>
+                       <a class="icon-color fw-medium" href="{{route('profile_company',$job->employer->id)}}">Xem trang công ty
+                        <i class="fa-solid fa-arrow-up-right-from-square icon-color ms-1"></i>
+                    </a>
+                       
+                    </div>
                     <div class="job_sumary">
                         <div class="summery_header">
                             <h3 class="fw-bold mb-0">Thông tin chung</h3>

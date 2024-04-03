@@ -139,35 +139,14 @@
                                     </div>
                                 </div>
                                 <div class="col ms-5">
-                                    <div class="ms-5">
-                                        <label class="form-label fw-bold text-dark" for="formGroupExampleInput">Giới
-                                            tính<span class="text-danger"> *</span> </label>
-                                        <div>
-                                            <div class="form-check form-check-inline me-5">
-                                                <input class="form-check-input" type="radio" name="gender"
-                                                    id="flexRadioDefault1" value="Nam">
-                                                <label class="form-check-label text-dark"
-                                                    for="flexRadioDefault1">Nam</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender"
-                                                    id="flexRadioDefault2" value="Nữ">
-                                                <label class="form-check-label text-dark" for="flexRadioDefault2">Nữ</label>
-                                            </div>
-                                        </div>
+                                    <label for="exampleInputPhone" class="form-label fw-bold text-dark">Số điện thoại cá
+                                        nhân<span class="text-danger"> *</span> </label>
+                                    <div class="input-group bg-white">
+                                        <span class="input-group-text bg-white input-icon" id="basic-addon1"><i
+                                                class="fa fa-phone"></i></span>
+                                        <input type="text" class="form-control border border-start-0" id="exampleInputPhone" name="phone"
+                                            placeholder="Số điện thoại cá nhân">
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="mb-3">
-                                <label for="exampleInputPhone" class="form-label fw-bold text-dark">Số điện thoại cá
-                                    nhân<span class="text-danger"> *</span> </label>
-                                <div class="input-group bg-white">
-                                    <span class="input-group-text bg-white input-icon" id="basic-addon1"><i
-                                            class="fa fa-phone"></i></span>
-                                    <input type="text" class="form-control border border-start-0" id="exampleInputPhone" name="phone"
-                                        placeholder="Số điện thoại cá nhân">
                                 </div>
                             </div>
                         </div>
@@ -182,27 +161,6 @@
                                                 class="fa fa-building"></i></span>
                                         <input type="text" class="form-control border border-start-0"
                                             placeholder="Tên công ty" name="company">
-                                    </div>
-                                </div>
-                                <div class="col ms-5">
-                                    <div class="ms-5">
-                                        <label class="form-label fw-bold text-dark" for="formGroupExampleInput">Vị trí công
-                                            tác<span class="text-danger"> *</span> </label>
-                                        <div class="input-group bg-white">
-                                            <span class="input-group-text bg-white input-icon" id="basic-addon1">
-                                                <i class="fa-solid fa-user-tie"></i></span>
-                                            <select class="form-control border-start-0"
-                                                aria-label="Default select example" name="position">
-                                                <option selected>Chọn vị trí công tác</option>
-                                                <option value="Nhân viên">Nhân viên</option>
-                                                <option value="Trưởng nhóm">Trưởng nhóm</option>
-                                                <option value="Phó phòng">Phó phòng</option>
-                                                <option value="Trưởng phòng">Trưởng phòng</option>
-                                                <option value="Phó giám đốc">Phó giám đốc</option>
-                                                <option value="Giám đốc">Giám đốc</option>
-                                                <option value="Tổng giám đốc">Tổng giám đốc</option>
-                                            </select>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +178,7 @@
                                     </div>
                                 </div>
                                 <div class="col ms-5">
-                                    <div class="ms-5">
+                                    <div class="">
                                         <label class="form-label fw-bold text-dark"
                                             for="formGroupExampleInputDistric">Quận/Huyện<span class="text-danger">
                                                 *</span>

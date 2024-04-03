@@ -22,7 +22,7 @@
                                     <div class="col-lg-12 col-md-12 mb-4">
                                         <div class="upload-btn-wrapper">
                                             <button class="btn-logo"><i class="fa-solid fa-upload pe-2"></i>Chọn logo</button>
-                                            <input type="file" name="logo" />
+                                            <input type="file" name="logo" id="file" onchange="loadFile(event)"/>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 mb-4">
@@ -57,7 +57,7 @@
                                         <div class="form-group">
                                             <label>Mô tả:</label>
                                             <div class="form-floating">
-                                                <textarea class="form-control line-text" rows="10"> {{ $employer->description }}</textarea>
+                                                <textarea class="form-control line-text" rows="10" name="description"> {{ $employer->description }}</textarea>
                                             </div>
                                         </div>
                                     </div>

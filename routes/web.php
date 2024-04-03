@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\JobseekerController;
 use App\Http\Controllers\Employer\Auth\LoginController as EmployerLoginController;
 use App\Http\Controllers\Employer\Auth\RegisterController as EmployerRegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\Employer\ProfileController;
 use App\Http\Controllers\Employer\PostJobController;
 use App\Http\Controllers\Employer\ManageJobController;
@@ -32,10 +33,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/login', function () {
-    return view('admin.auth.login');
-});
-
 Route::get('/create', function () {
     return view('admin.blog.create');
 });
@@ -51,27 +48,29 @@ Route::group([
 });
 
 Route::group([
-    'prefix'=>'admin',
-    'middleware'=>'auth:admin',
-],function(){
+    'prefix' => 'admin',
+    'middleware' => 'auth:admin',
+], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/category/index', [CategoryController::class, 'index'])->name('category.index');
-Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
-Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
-Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
-Route::put('/category/{category}', [CategoryController::class, 'update'])->name('category.update');
-Route::delete('/category/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
-Route::get('/blog/index', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
-Route::get('/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
-Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
-Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
-Route::get('/manage_employer', [EmployerController::class, 'index'])->name('manage_employer');
-Route::get('/manage_jobseeker', [JobseekerController::class, 'index'])->name('manage_jobseeker');
-Auth::routes();
-} );
+    Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('/category/{category}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
+    Route::get('/blog/index', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::get('/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
+    Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+    Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
+    Route::get('/manage_employer', [EmployerController::class, 'index'])->name('manage_employer');
+    Route::delete('/employer/{employer}', [EmployerController::class, 'destroy'])->name('employer.destroy');
+    Route::get('/manage_jobseeker', [JobseekerController::class, 'index'])->name('manage_jobseeker');
+    Route::delete('/user/{user}', [JobseekerController::class, 'destroy'])->name('user.destroy');
+});
 
+Auth::routes();
 Route::group([
     'prefix'    => 'employer',
     'namespace' => 'Employer\Auth',
@@ -85,9 +84,9 @@ Route::group([
 
 
 Route::group([
-    'prefix'=>'employer',
-    'middleware'=>'auth:employer',
-],function(){
+    'prefix' => 'employer',
+    'middleware' => 'auth:employer',
+], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('employer.index');
     Route::put('/{employer}/update', [ProfileController::class, 'updateProfile'])->name('employer.profile.update');
     Route::get('/change_password', [ProfileController::class, 'showChangePasswordForm'])->name('employer.show_change_password');
@@ -99,18 +98,23 @@ Route::group([
     Route::delete('manage_job/{job}', [ManageJobController::class, 'destroy'])->name('employer.destroy_job');
     Route::get('/manage_jobseeker', [ManageJobSeekerController::class, 'index'])->name('employer.manage_jobseeker');
     Route::put('/update_status', [ManageJobSeekerController::class, 'updateStatus'])->name('employer.update_status');
-
-} );
+});
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/{job}/detail',[HomeController::class, 'jobDetail'])->name('detail');
+Route::get('/{job}/detail', [HomeController::class, 'jobDetail'])->name('detail');
 Route::get('/jobs', [HomeController::class, 'jobs'])->name('jobs');
 Route::get('/category/{category}', [HomeController::class, 'jobsByCategory'])->name('jobsbycategory');
 Route::get('/viewcv/{application}', [HomeController::class, 'viewCV'])->name('view_cv');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/blog', [HomeController::class, 'getArticles'])->name('blog');
 Route::get('/blog/{article}', [HomeController::class, 'detailBlog'])->name('detailblog');
+Route::get('/profile_company/{employer}', [HomeController::class, 'profileCompany'])->name('profile_company');
+Route::get('/chats/{employer}', [ChatController::class, 'indexUser'])->name('chats');
+Route::post('/message', [ChatController::class, 'sendMessageToEmployer'])->name('send_message_to_employer');
+Route::get('/chat_with_user/{user}', [ChatController::class, 'indexEmployer'])->name('chats_employer');
+Route::post('/send_message_to_user)', [ChatController::class, 'sendMessageToUser'])->name('send_message_to_user');
+Route::get('/api/get-new-messages', 'ChatController@fetchNewMessages');
 
 
 Route::group([
@@ -125,9 +129,9 @@ Route::group([
 });
 
 Route::group([
-    'prefix'=>'jobseeker',
-    'middleware'=>'auth:web',
-],function(){
+    'prefix' => 'jobseeker',
+    'middleware' => 'auth:web',
+], function () {
     Route::post('/apply/{job}', [ApplicationController::class, 'apply'])->name('user.apply');
     Route::get('/', [ProfileJobSeekerController::class, 'index'])->name('user.profile');
     Route::put('/{user}/update', [ProfileJobSeekerController::class, 'update'])->name('user.update');
@@ -139,4 +143,3 @@ Route::group([
     Route::get('/change_password', [ProfileJobSeekerController::class, 'showChangePasswordForm'])->name('user.show_change_password');
     Route::put('/change_password/{user}', [ProfileJobSeekerController::class, 'changePassword'])->name('user.change_password');
 });
-

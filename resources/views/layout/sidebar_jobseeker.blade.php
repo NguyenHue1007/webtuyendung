@@ -10,7 +10,7 @@
                 id="output" width="150" /> --}}
             @if ($user->avatar)
                 <img class="rounded-circle" src="{{ url(Storage::url($user->avatar)) }}"
-                    width="150">
+                    width="150" id="output">
             @else
                 <img class="rounded-circle"
                     src="https://th.bing.com/th/id/R.f4ee44faf35e56d31a594dc64fd0fd62?rik=NzF9YauGlFehuA&pid=ImgRaw&r=0"

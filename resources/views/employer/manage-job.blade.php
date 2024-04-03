@@ -36,6 +36,7 @@
                                     <tr>
                                         <th>Tên tin đăng</th>
                                         <th class="text-center">Lượt nộp</th>
+                                        <th class="text-center">Lượt xem</th>
                                         <th class="text-center">Trạng thái</th>
                                         <th>Hành động</th>
                                     </tr>
@@ -44,7 +45,7 @@
                                     @foreach ($jobs as $job)
                                         <tr>
                                             <td class="job-name">
-                                                <p class="mb-1">{{ $job->title }}</p>
+                                                <p class="mb-1" style="max-width: 320px">{{ $job->title }}</p>
                                                 <ul class="job-post-info d-flex">
                                                     <li class="me-3">
                                                         <i class="fa-solid fa-calendar-days icon-color pe-1"></i>
@@ -57,6 +58,7 @@
                                                 </ul>
                                             </td>
                                             <td class="text-center">{{ count($job->applications) }}</td>
+                                            <td class="text-center">{{ $job->view }}</td>
                                             @if ($job->isActive())
                                                 <td class="text-center text-primary">Đang hoạt động</td>
                                             @else
@@ -153,7 +155,7 @@
                             <p><strong>Mô tả công việc:</strong></p>
                         </div>
                         <div class="col-9">
-                            <p class="format-content" id="job-description"> {{ $job->job_description }}</p>
+                            <p class="format-content" id="job-description"> {!! $job->job_description !!}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -161,7 +163,7 @@
                             <p><strong>Yêu cầu:</strong></p>
                         </div>
                         <div class="col-9">
-                            <p class="format-content" id="job-requirement"> {{ $job->requirement }}</p>
+                            <p class="format-content" id="job-requirement"> {!! $job->requirement !!}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -169,7 +171,7 @@
                             <p><strong>Quyền lợi:</strong></p>
                         </div>
                         <div class="col-9">
-                            <p class="format-content" id="job-benefit"> {{ $job->benefit }}</p>
+                            <p class="format-content" id="job-benefit"> {!! $job->benefit !!}</p>
                         </div>
                     </div>
                 </div>

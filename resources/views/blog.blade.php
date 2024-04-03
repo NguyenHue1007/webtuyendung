@@ -3,7 +3,6 @@
 @endphp
 
 @extends('layout.main')
-
 @section('content')
     @INCLUDE('layout.header')
         <!--================Blog Area =================-->

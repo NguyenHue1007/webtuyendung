@@ -67,7 +67,7 @@
                                 <div class="col-md-6">
                                     <h4>Danh sách việc làm</h4>
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="serch_cat d-flex justify-content-end">
                                         <select>
                                             <option data-display="Most Recent">Most Recent</option>
@@ -76,7 +76,7 @@
                                             <option value="4">Designer</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

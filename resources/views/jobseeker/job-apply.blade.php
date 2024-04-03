@@ -53,6 +53,9 @@
                                                             </p>
                                                         </div>
                                                         <div class="apply_now align-items-end mt-5">
+                                                            <a class="bg-link icon-color px-2 py-1 me-2 rounded-pill" href="{{route('chats',$application->job->employer->id)}}"> <i class="fa-solid fa-message"></i>
+                                                                Nhắn tin
+                                                            </a>
                                                             <a class="bg-link icon-color px-2 py-1 rounded-pill" href="{{route('view_cv',$application->id) }}"> <i class="fa-solid fa-eye"></i>
                                                                 Xem CV
                                                             </a>

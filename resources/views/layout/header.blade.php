@@ -12,7 +12,7 @@
                                   </a>
                               </div>
                           </div>
-                          <div class="col-xl-6 col-lg-7">
+                          <div class="col-xl-5 col-lg-6">
                               <div class="main-menu  d-none d-lg-block">
                                   <nav>
                                       <ul id="navigation">
@@ -25,7 +25,7 @@
                                   </nav>
                               </div>
                           </div>
-                          <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                          <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                               <div class="Appointment">
                                 @if (Auth::guard('web')->check())
                                       <div class="dropdown">
@@ -66,6 +66,7 @@
                                               </form>
                                           </ul>
                                       </div>
+                                     
                                   @elseif (Auth::guard('employer')->check())
                                       <div class="dropdown">
                                           <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -78,21 +79,29 @@
                                           <ul class="dropdown-menu">
                                               <a class="dropdown-item py-2" href="{{ route('employer.index') }}">
                                                   <i class="fa-regular fa-user pe-2 icon-color"></i>
-                                                  <span>Company Profile</span>
+                                                  <span>Thông tin công ty</span>
                                               </a>
                                               <a class="dropdown-item py-2" href="{{ route('employer.post_job') }}">
                                                   <i class="fa-regular fa-file pe-2 icon-color"></i>
-                                                  <span>Post a job</span>
+                                                  <span>Tạo tin tuyển dụng</span>
                                               </a>
                                               <a class="dropdown-item py-2" href="{{ route('employer.manage_job') }}">
                                                   <i class="fa fa-briefcase pe-2 icon-color"></i>
-                                                  <span>Manage job</span>
+                                                  <span>Quản lý tin đăng</span>
                                               </a>
+                                              <a class="dropdown-item py-2" href="{{ route('employer.manage_jobseeker') }}">
+                                                <i class="fa fa-briefcase pe-2 icon-color"></i>
+                                                <span>Quản lý ứng viên</span>
+                                            </a>
+                                            <a class="dropdown-item py-2" href="{{ route('employer.show_change_password') }}">
+                                                <i class="fa fa-briefcase pe-2 icon-color"></i>
+                                                <span>Thay đổi mật khẩu</span>
+                                            </a>
                                               <a class="dropdown-item py-2" href="{{ route('employer.logout') }}"
                                                   data-toggle="modal" data-target="#logoutModal"
                                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                   <i class="fas fa-sign-out-alt pe-2 icon-color"></i>
-                                                  {{ __('Logout') }}
+                                                  Đăng xuất
                                               </a>
                                               <form id="logout-form" action="{{ route('employer.logout') }}"
                                                   method="POST" class="d-none">
@@ -102,15 +111,14 @@
                                       </div>
                                   @else
                                       <div class="phone_num d-none d-xl-block">
-                                          <a class="boxed-btn3 font-weight-bold" href="{{ route('login') }}">Log in</a>
+                                          <a class="boxed-btn3 font-weight-bold" href="{{ route('login') }}">Đăng nhập</a>
                                       </div>
                                       <div class="phone_num d-none d-xl-block">
                                           <a class="boxed-btn3 font-weight-bold" data-bs-toggle="modal"
-                                              data-bs-target="#exampleModal" href="#">Sign
-                                              in</a>
+                                              data-bs-target="#exampleModal" href="#">Đăng ký</a>
                                       </div>
                                       <div class="d-none d-lg-block">
-                                          <a class="boxed-btn3" href="{{ route('employer.login') }}">Post a Job</a>
+                                          <a class="boxed-btn3" href="{{ route('employer.login') }}">Đăng tuyển & tìm hồ sơ</a>
                                       </div>
                                   @endif
                               </div>
