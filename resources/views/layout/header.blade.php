@@ -8,7 +8,7 @@
                           <div class="col-xl-3 col-lg-2">
                               <div class="logo">
                                   <a href="{{ route('home') }}">
-                                      <img src="{{ url('img/logo.png') }}" alt="">
+                                      <img src="{{ url('img/logo2.png') }}" alt="" height="40">
                                   </a>
                               </div>
                           </div>

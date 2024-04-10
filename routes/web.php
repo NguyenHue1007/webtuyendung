@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\EmployerController;
 use App\Http\Controllers\Admin\JobseekerController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Employer\ProfileController;
 use App\Http\Controllers\Employer\PostJobController;
 use App\Http\Controllers\Employer\ManageJobController;
 use App\Http\Controllers\Employer\ManageJobSeekerController;
+use App\Http\Controllers\Employer\ServiceController;
 use App\Http\Controllers\JobSeeker\ApplicationController;
 use App\Http\Controllers\JobSeeker\ProfileJobSeekerController;
 use App\Http\Controllers\JobSeeker\JobApplyController;
@@ -33,11 +35,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/create', function () {
-    return view('admin.blog.create');
+Route::get('/package', function () {
+    return view('employer.service');
 });
 
-
+Route::get('/payment', function () {
+    return view('payment');
+});
 Route::group([
     'prefix'    => 'admin',
     'namespace' => 'Admin\Auth',
@@ -68,6 +72,12 @@ Route::group([
     Route::delete('/employer/{employer}', [EmployerController::class, 'destroy'])->name('employer.destroy');
     Route::get('/manage_jobseeker', [JobseekerController::class, 'index'])->name('manage_jobseeker');
     Route::delete('/user/{user}', [JobseekerController::class, 'destroy'])->name('user.destroy');
+    Route::get('/package/index', [PackageController::class, 'index'])->name('package.index');
+    Route::get('/package/create', [PackageController::class, 'create'])->name('package.create');
+    Route::post('/package', [PackageController::class, 'store'])->name('package.store');
+    Route::get('/package/{package}/edit', [PackageController::class, 'edit'])->name('package.edit');
+    Route::put('/package/{package}', [PackageController::class, 'update'])->name('package.update');
+    Route::delete('/package/{package}', [PackageController::class, 'destroy'])->name('package.destroy');
 });
 
 Auth::routes();
@@ -98,6 +108,11 @@ Route::group([
     Route::delete('manage_job/{job}', [ManageJobController::class, 'destroy'])->name('employer.destroy_job');
     Route::get('/manage_jobseeker', [ManageJobSeekerController::class, 'index'])->name('employer.manage_jobseeker');
     Route::put('/update_status', [ManageJobSeekerController::class, 'updateStatus'])->name('employer.update_status');
+    Route::get('/service', [ServiceController::class, 'index'])->name('employer.service');
+    Route::get('/payment/{package}', [ServiceController::class, 'showFormPayment'])->name('employer.show_form_payment');
+    Route::post('/package_subcription', [ServiceController::class, 'packageSubscription'])->name('employer.package_subscription');
+    Route::get('/purchase_history', [ServiceController::class, 'purchaseHistory'])->name('employer.purchase_history');
+    Route::put('purchase_history/{employerPackageSubscription}', [ServiceController::class, 'deletePackageSubscription'])->name('employer.delete_package_subscription');
 });
 
 

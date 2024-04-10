@@ -65,4 +65,13 @@ class Employer extends Authenticatable
         return $this->morphMany(Message::class, 'receiver');
     }
 
+    public function jobPackages()
+    {
+        return $this->belongsToMany(JobPackage::class, 'employer_package');
+    }
+
+    public function employerPackages()
+    {
+        return $this->hasMany(EmployerPackageSubscription::class);
+    }
 }

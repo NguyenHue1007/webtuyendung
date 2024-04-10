@@ -11279,3 +11279,27 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 800;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 900;
+  overflow-y: auto;
+}
+
+
+#content-wrapper {
+  margin-left: 225px; 
+  margin-top: 100px;
+}

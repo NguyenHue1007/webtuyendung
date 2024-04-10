@@ -7,7 +7,7 @@
                         <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="{{ url('img/logo.png') }}" alt="">
+                                    <img src="{{ url('img/logo2.png') }}" alt="" height="40">
                                 </a>
                             </div>
                             <p>

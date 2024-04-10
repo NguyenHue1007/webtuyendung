@@ -47,6 +47,18 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{route('employer.service')}}">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span>Mua dịch vụ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('employer.purchase_history')}}">
+                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                        <span>Lịch sử đơn hàng</span>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="{{ route('employer.show_change_password') }}">
                                         <i class="fa fa-key"></i>
                                         <span>Thay đổi mật khẩu</span>

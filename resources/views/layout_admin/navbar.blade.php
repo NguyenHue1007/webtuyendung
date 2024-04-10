@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav CLASS="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav CLASS="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow position-fixed">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" CLASS="btn btn-link d-md-none rounded-circle mr-3">
@@ -126,19 +126,6 @@
             </a>
             <!-- Dropdown - User Information -->
             <div CLASS="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a CLASS="dropdown-item" href="#">
-                    <i CLASS="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
-                </a>
-                <a CLASS="dropdown-item" href="#">
-                    <i CLASS="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                </a>
-                <a CLASS="dropdown-item" href="#">
-                    <i CLASS="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                </a>
-                <div CLASS="dropdown-divider"></div>
                 {{-- <a CLASS="dropdown-item" href="{{route('admin.logout')}}" data-toggle="modal" data-target="#logoutModal">
           <i CLASS="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
           Logout

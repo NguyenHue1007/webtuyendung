@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header text-center">Create category</div>
-                    <div class="card-body">
+                <div class="mt-5">
+                    <div class="card-header text-center fw-bold fs-4 mb-4">Tạo danh mục mới</div>
+                    <div class="card-body fw-bold">
                         <form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">

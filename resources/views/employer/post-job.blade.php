@@ -11,8 +11,12 @@
                     </div>
                     <div class="col-xl-9 col-lg-8">
                         <div class="job-bx submit-resume">
-                            <div class="job-bx-title">
+                            <div class="job-bx-title d-flex justify-content-between">
                                 <h3 class="fw-bold text-uppercase">Tạo tin tuyển dụng</h3>
+                                @if ($activePackageSubscription)
+                                    <h5 class="pe-4 text-warning">Lượt đăng bài còn lại:
+                                        {{ $activePackageSubscription->remaining_posts }}</h5>
+                                @endif
                             </div>
                             <form method="POST" action="{{ route('employer.store') }}">
                                 @csrf

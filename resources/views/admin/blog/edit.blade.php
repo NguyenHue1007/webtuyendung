@@ -3,31 +3,31 @@
 @section('content')
     <div class="container">
         <div class="col-md-12">
-            <div>
+            <div class="fw-bold">
                 <form method="POST" action="{{ route ('blog.update',$blog->id)}}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Thumbnail</label>
-                        <div class="col-sm-10">
+                    <div class="mb-3">
+                        <label class="col-form-label">Thumbnail</label>
+                        <div class="">
                             <input type="file" class="form-control" name="thumbnail">
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Title</label>
-                        <div class="col-sm-10">
+                    <div class="mb-3">
+                        <label class="col-form-label">Title</label>
+                        <div class="">
                             <input type="text" class="form-control" name="title" value="{{$blog->title}}">
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Summary</label>
-                        <div class="col-sm-10">
+                    <div class="mb-3">
+                        <label class="col-form-label">Summary</label>
+                        <div class="">
                             <textarea type="text" class="form-control" name="summary" rows="7">{{$blog->summary}}</textarea>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Content</label>
-                        <div class="col-sm-10">
+                    <div class="mb-3">
+                        <label class="col-form-label">Content</label>
+                        <div class="">
                             <textarea type="text" class="form-control" name="content" id="editor4" rows="30">{!!$blog->content!!}</textarea>
                         </div>
                     </div>

@@ -18,7 +18,7 @@
             @INCLUDE('layout_admin.navbar')
 
             <!-- Begin Page Content -->
-            <div CLASS="container-fluid">
+            <div CLASS="container-fluid bg-white">
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">
                       {{ session('success') }}

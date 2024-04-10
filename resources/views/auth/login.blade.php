@@ -77,6 +77,9 @@
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center vh-100">
             <div class="col" style="max-width: 600px">
+                <div class="mb-3">
+                    <img src="{{ url('img/logo2.png') }}" alt="" height="50">
+                </div>
                 <div class="mb-4">
                     <h3 class="text-primary fw-bold mb-2">Chào mừng bạn đã quay trở lại</h3>
                     <span style="font-size: 15px; color: #7f878f">Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý tưởng</span>
